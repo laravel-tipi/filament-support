@@ -11,10 +11,10 @@ use Illuminate\Validation\ValidationException;
 use Tipi\Filament\Validation\FilamentValidator;
 
 beforeEach(function (): void {
-    $container = new Container();
+    $container = new Container;
     $container->instance(
         'validator',
-        new Factory(new Translator(new ArrayLoader(), 'en'), $container),
+        new Factory(new Translator(new ArrayLoader, 'en'), $container),
     );
 
     Facade::setFacadeApplication($container);
